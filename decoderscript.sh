@@ -1,18 +1,22 @@
 #!/bin/bash
 
 # Path to the destination folder
-DEST_FOLDER="/var/ossec/ruleset/decoders"
+DEST_FOLDER="/var/ossec/ruleset/decoders/"
 
 # Path to the XML file
 XML_FILE="$DEST_FOLDER/testdecoder.xml"
 
-# Clone the GitHub repository
-git clone https://github.com/mappelmans/decodertest.git temp_repo
+# URL of the raw XML file on GitHub with timestamp
+XML_URL="https://raw.githubusercontent.com/mappelmans/decodertest/main/copydecoder.xml"
 
-# Copy the contents of copydecoder.xml to testdecoder.xml
-cp temp_repo/copydecoder.xml "$XML_FILE"
+# Delete the existing XML file if it exists
+if [ -f "$XML_FILE" ]; then
+    rm "$XML_FILE"
+fi
 
-# Remove the temporary repository
-rm -rf temp_repo
+# download wget and send output to /dev/null
+
+sudo apt install wget -y >> /dev/null
+wget -O "$XML_FILE" "$XML_URL"
 
 echo "XML file copied successfully to $XML_FILE"
