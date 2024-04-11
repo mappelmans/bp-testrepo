@@ -1,5 +1,7 @@
+#testing purposes
+
 <decoder name="barracuda-fw">
-  <program_name>FW-360-HQ-01</program_name>
+  <program_name>FW-XXX-HQ-01</program_name>
 </decoder>
 
 <decoder name="fw-child">
@@ -8,4 +10,4 @@
   <order>type</order>
 </decoder>
 
-u metjn aaaaaaaaaaaaaaaaaaaaa
+
