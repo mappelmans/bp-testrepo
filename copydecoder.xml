@@ -1,0 +1,9 @@
+<decoder name="barracuda-fw">
+  <program_name>FW-360-HQ-01</program_name>
+</decoder>
+
+<decoder name="fw-child">
+  <parent>barracuda-fw</parent>
+  <regex offset="after_parent">^</regex>
+  <order>type</order>
+</decoder>
